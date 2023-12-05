@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>LOGIN</title>
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+    <form  action="/autenticar" method="POST" class="formulario" >
+        <h1>Ingresar</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-address-card"></i>
+                <input type="text" placeholder="Ingrese DNI" id="dni" name="dni" required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required>
+            </div>
+            <input type="submit" value="Iniciar Sesion" class="button">
+            <% if(typeof error !== 'undefined'){ %>
+                <p><%= error %></p>
+            <% } %>
+            <p>¿No tienes una cuenta? <a class="link" href="/registrarUsuario">Registrate </a></p>
+        </div>    
+    </form>
+</body>	
+</html>

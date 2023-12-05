@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="/static/inicio.css">
+</head>
+<body>
+    <header>
+        <h1>Gim Tres Musculos</h1>
+        <div class="usuario">
+            <img src="/img/logo.png" width="50">
+            <p><%= usuario %></p>
+            <p>Plan <%= suscripcion %></p>
+        </div>
+        
+    </header>
+
+    <section>
+        <h2>Locales</h2>
+
+        <div class="class-card">
+            <h3>Villa el Salvador</h3>
+            <p>Mejora tu resistencia cardiovascular con nuestra clase de cardio.</p>
+        </div>
+
+        <div class="class-card">
+            <h3>Villa maria del Triunfo</h3>
+            <p>Descubre los beneficios del yoga para relajar cuerpo y mente.</p>
+        </div>
+    </section>
+    <% if(suscripcion !== 'premium'){ %>
+        <section>        
+            <div class="class-card">
+                <h3>Plan Premium</h3>
+                <p>Acceso a todas las clases y eventos organizados por el gimnasio</p>
+                <h4>Cambia tu Plan</h4>
+            </div>
+        </section>
+    <% } %>
+    <% if(suscripcion === 'premium'){ %>
+        <section>
+            <h2>Clases</h2>   
+            <div class="class-card">
+                <h3>Clase de Cardio</h3>
+                <p>Mejora tu resistencia cardiovascular con nuestra clase de cardio.</p>
+            </div>
+
+            <div class="class-card">
+                <h3>Yoga Relajante</h3>
+                <p>Descubre los beneficios del yoga para relajar cuerpo y mente.</p>
+            </div>
+        </section>
+    <% } %>
+        <!-- Agrega más tarjetas de clases según sea necesario -->
+
+    <div class="footer">
+        <p> 2023 SmartFit - Todos los derechos reservados</p>
+    </div>
+</body>
+</html>

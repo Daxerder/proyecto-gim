@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrar</title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+    <form action="/insertar" method="POST" class="formulario">
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Nombre Completo" name="nombre" required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-address-card"></i>
+                <input type="text" placeholder="Ingrese DNI" id="dni" name="dni" min="6" max="11"required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required>
+            </div>
+            <div class="cuerpo-suscripcion">
+                <Div class="suscripcion" id="plan1">
+                    <p>Plan Simple</p>
+                    <p>S/ 69.90</p>
+                    <p>Pago Mensual (No incluye clases)</p>
+                    <p>Pago Anual S/ 800.00</p>
+                </Div>
+                <div class="suscripcion" id="plan2">
+                    <p>Plan Premium</p>
+                    <p>S/ 99.90</p>
+                    <p>Pago Mensual</p>
+                    <p>Pago Anual S/ 1000.00</p>
+                </div>
+            </div>
+            <input type="text" id="suscripcion" name="suscripcion" class="plan">
+            <button type="button" value="Resgistrate" class="button" onclick="metodo_pago()">Registrarse</button>
+
+            <dialog id="emergente">
+                <p>Elegir metodo de pago</p>
+                <center><button type="submit"><img src="/img/yape.png" alt="" width="100"></button></center>
+                <p>Yape</p>
+            </dialog>
+
+            <% if(typeof error !== 'undefined'){ %>
+                <p><%= error %></p>
+            <% } %>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿Ya tienes una cuenta?<a class="link" href="/">Iniciar Sesion</a></p>
+        </div>
+    </form>
+    <script src="/java/plan.js"></script>
+</body>	
+</html>
